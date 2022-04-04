@@ -1,10 +1,10 @@
-{extends file=$conf->root_path|cat:"/templates/main.tpl"}
+{extends file="main.tpl"}
 
 {block name=footer}Copyright &copy 2022, gCode dev. All rights reserved.{/block}
 
 {block name=content}
 
-<form action="{$conf->app_url}/app/calc.php" method="post">
+<form action="{$conf->action_root}calcCompute" method="post">
     <h2>{$p_title}</h2>
     <label for="amount">How much do you need?</label>
     <input type="text" name="amount" placeholder="Amount" id="amount" required>
