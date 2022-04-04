@@ -7,12 +7,12 @@ require_once 'init.php';
 switch($action){
     default:
         include_once $conf->root_path.'/app/controllers/CalcCtrl.class.php';
-        $control = new CalcCtrl();
+        $control = new app\controllers\CalcCtrl();
         $control->generateView();
     break;
     case 'calcCompute':
         include_once $conf->root_path.'/app/controllers/CalcCtrl.class.php';
-        $control = new CalcCtrl();
+        $control = new app\controllers\CalcCtrl();
         $control->process();
     break;
     

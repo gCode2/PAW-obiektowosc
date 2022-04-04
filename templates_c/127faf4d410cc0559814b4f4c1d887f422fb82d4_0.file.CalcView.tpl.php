@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-04 17:40:28
+/* Smarty version 4.1.0, created on 2022-04-04 18:35:11
   from 'C:\xampp\htdocs\PAW\calc_obj\app\views\CalcView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_624b116c907081_27794259',
+  'unifunc' => 'content_624b1e3f97d079_66546546',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_624b116c907081_27794259 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624b1e3f97d079_66546546 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1798769698624b116c8fb6f8_79334581', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1074128082624b1e3f971cc8_49396044', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1098926831624b116c8fbfa7_11832102', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_887958879624b1e3f9724f4_99209080', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_1798769698624b116c8fb6f8_79334581 extends Smarty_Internal_Block
+class Block_1074128082624b1e3f971cc8_49396044 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_1798769698624b116c8fb6f8_79334581',
+    0 => 'Block_1074128082624b1e3f971cc8_49396044',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Copyright &copy 2022, gCode dev. All rights reserved.<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1098926831624b116c8fbfa7_11832102 extends Smarty_Internal_Block
+class Block_887958879624b1e3f9724f4_99209080 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1098926831624b116c8fbfa7_11832102',
+    0 => 'Block_887958879624b1e3f9724f4_99209080',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
