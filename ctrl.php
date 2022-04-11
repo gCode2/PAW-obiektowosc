@@ -4,27 +4,18 @@ require_once 'init.php';
 
 //$action = isset($_REQUEST['action']) ? $_REQUEST["action"] : '';
 
-switch($action){
-    default:
-        include 'check.php';
-        $control = new app\controllers\CalcCtrl();
-        $control->generateView();
-    break;
-    case 'login':
-        $control = new app\controllers\LoginCtrl();
-        $control->doLogin();
-    break;
-    case 'calcCompute':
-        include 'check.php';
-        $control = new app\controllers\CalcCtrl();
-        $control->process();
-    break;
-    case 'logout':
-        include 'check.php';
-        $control = new app\controllers\LoginCtrl();
-        $control->doLogout();
-    break;    
+getConf()->login_action = 'login';
 
+
+switch($action){
+   default :
+		control('app\\controllers', 'CalcCtrl', 'generateView', ['user','admin']);
+	case 'login': 
+		control('app\\controllers', 'LoginCtrl','doLogin');
+	case 'calcCompute' : 
+		control(null, 'CalcCtrl', 'process', ['user','admin']);
+	case 'logout' : 
+		control(null, 'LoginCtrl',	'doLogout',	['user','admin']);
 }
 
 

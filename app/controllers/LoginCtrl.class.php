@@ -19,7 +19,7 @@ class LoginCtrl{
 
     public function validate(){
         if(!(isset($this->form->login)&&isset($this->form->password))){
-            getMessages()->addError("Wrong app call");
+            return false;
         }
     
         if(getMessages()->isError()){
@@ -32,14 +32,13 @@ class LoginCtrl{
             }
         }
         if(!getMessages()->isError()){
-            echo $this->form->login;
-            echo $this->form->password;
             if($this->form->login == "admin" && $this->form->password == "admin"){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
             $user = new User($this->form->login, 'admin');
             $_SESSION['user'] = serialize($user);
+            addRole($user->role);
 
         }else if($this->form->login == "user" && $this->form->password == "user"){
             if(session_status() == PHP_SESSION_NONE){
@@ -47,6 +46,7 @@ class LoginCtrl{
             }
             $user = new User($this->form->login, 'user');
             $_SESSION['user'] = serialize($user);
+            addRole($user->role);
         }else{
             getMessages()->addError("Wrong login or password");
         }

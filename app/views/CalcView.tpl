@@ -3,7 +3,10 @@
 {block name=footer}Copyright &copy 2022, gCode dev. All rights reserved.{/block}
 
 {block name=content}
-
+<div>
+<span><strong>User: </strong></span>{$user->login} <br>
+<span><strong>Role: </strong></span>{$user->role}
+</div>
 <form action="{$conf->action_root}calcCompute" method="post">
     <h2>{$p_title}</h2>
     <label for="amount">How much do you need?</label>

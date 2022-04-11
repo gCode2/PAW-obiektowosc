@@ -77,7 +77,7 @@ class CalcCtrl {
     
 
     public function generateView(){
-        
+        getSmarty()->assign('user', unserialize($_SESSION['user']));
         getSmarty()->assign('p_title','Currency Calc by G');
         getSmarty()->assign('p_desc','Calculate loan payment');
         getSmarty()->assign('form', $this->form);
