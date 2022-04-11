@@ -3,9 +3,14 @@
 {block name=footer}Copyright &copy 2022, gCode dev. All rights reserved.{/block}
 
 {block name=content}
-<div>
+<div style="position:relative;display:flex;flex-direction:row;align-items:center;margin:0px auto 10px auto;width:17em;">
+<div style="flex:1">
+<a href="{$conf->action_url}logout" class="btn"">Log out</a>
+</div>
+<div style="flex:1">
 <span><strong>User: </strong></span>{$user->login} <br>
 <span><strong>Role: </strong></span>{$user->role}
+</div>
 </div>
 <form action="{$conf->action_root}calcCompute" method="post">
     <h2>{$p_title}</h2>

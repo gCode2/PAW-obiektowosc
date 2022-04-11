@@ -88,6 +88,15 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer !important;
 }
+.btn{
+  text-decoration:none;
+  color:white;
+  background: #5583f6;
+  padding:5px;
+  border-radius:5px;
+  cursor:pointer;
+  width:50px;
+}
 body {
   background-color: var(--bg);
   height: 100vh;
