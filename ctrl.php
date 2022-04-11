@@ -4,21 +4,14 @@ require_once 'init.php';
 
 //$action = isset($_REQUEST['action']) ? $_REQUEST["action"] : '';
 
-getConf()->login_action = 'login';
+getRouter()->setDefaultRoute('calcShow'); 
+getRouter()->setLoginRoute('login');
 
+getRouter()->addRoute('calcShow', 'CalcCtrl', ['user','admin']);
+getRouter()->addRoute('calcCompute', 'CalcCtrl', ['user','admin']);
+getRouter()->addRoute('login', 'LoginCtrl');
+getRouter()->addRoute('logout', 'LoginCtrl', ['user','admin']);
 
-switch($action){
-   default :
-		control('app\\controllers', 'CalcCtrl', 'generateView', ['user','admin']);
-	case 'login': 
-		control('app\\controllers', 'LoginCtrl','doLogin');
-	case 'calcCompute' : 
-		control(null, 'CalcCtrl', 'process', ['user','admin']);
-	case 'logout' : 
-		control(null, 'LoginCtrl',	'doLogout',	['user','admin']);
-}
-
-
-
+getRouter()->go();
 
 ?>

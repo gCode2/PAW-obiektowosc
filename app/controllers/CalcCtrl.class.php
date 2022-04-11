@@ -15,9 +15,9 @@ class CalcCtrl {
     }
 
     public function getParams(){
-        $this->form->amount = isset($_REQUEST['amount']) ? $_REQUEST['amount'] : null;
-        $this->form->duration = isset($_REQUEST['duration']) ? $_REQUEST['duration'] : null;
-        $this->form->currency = isset($_REQUEST['currency']) ? $_REQUEST['currency'] : null;
+        $this->form->amount = getFromRequest('amount');
+        $this->form->duration = getFromRequest('duration');
+        $this->form->currency = getFromRequest('currency');
     }
 
 
@@ -36,7 +36,7 @@ class CalcCtrl {
         return !getMessages()->isError();
     }
 
-    public function process(){
+    public function action_calcCompute(){
         $this->getParams();
         if($this->validate()){
             $this->form->amount = intval($this->form->amount);
@@ -73,6 +73,10 @@ class CalcCtrl {
         $pln = (object) array("currency"=>"Złotówka Polska", "code"=>"PLN", "mid"=>1);
         array_unshift($currencyJSON, $pln);
         return $currencyJSON;
+    }
+    public function action_calcShow(){
+        getMessages()->addInfo("Hello in the calc!");
+        $this->generateView();
     }
     
 
